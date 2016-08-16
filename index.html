@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Anim</title>
+	<link rel="stylesheet" href="css/main.css">
+	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+<body>
+	<div id="hero" class="idle">
+		<div class="figure">
+			<div class="stance"></div>
+			<div class="attack">
+				<div class="lazer"></div>
+			</div>
+		</div>
+		<div class="shadow"></div>
+	</div>
+<script>
+	$( document ).ready(function() {
+		var stance = $('.stance'),
+			attack = $('.attack');
+			lazer = $('.lazer');
+
+
+    	setInterval(function(){
+    		stance.css('visibility','hidden');
+    		attack.css('visibility','visible');
+    		lazer.css('visibility','visible');
+    		setTimeout(function(){  			
+    			attack.css('visibility','hidden');
+    			lazer.css('visibility','hidden');
+    			stance.css('visibility','visible');
+    		}, 2000);
+    	},2000);
+	});
+</script>
+</body>
+</html>
